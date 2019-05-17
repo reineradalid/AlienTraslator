@@ -50,7 +50,8 @@ class DrawerContent extends React.Component {
         <View style={{paddingTop:10, paddingLeft:10, flexDirection: "row"}}>
           <TouchableOpacity style={{flexDirection:"row"}}>
                 <Icon name="about" style={{fontSize:25,}}/>
-                <Text style={{fontSize:25,paddingLeft:10 }}>Test</Text>
+
+                <Text style={{fontSize:25,paddingLeft:10 }}>Test Backend</Text>
             </TouchableOpacity>
         </View>
       </View>
