@@ -3,6 +3,7 @@ package com.practicedrawer;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.BV.LinearGradient.LinearGradientPackage;
 import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
 import com.facebook.react.ReactNativeHost;
@@ -12,6 +13,7 @@ import com.facebook.soloader.SoLoader;
 
 import java.util.Arrays;
 import java.util.List;
+import com.BV.LinearGradient.LinearGradientPackage; // <--- This!
 
 public class MainApplication extends Application implements ReactApplication {
 
@@ -25,6 +27,7 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new LinearGradientPackage(),
             new RNGestureHandlerPackage(),
             new VectorIconsPackage()
       );
