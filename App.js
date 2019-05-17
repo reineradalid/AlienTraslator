@@ -22,8 +22,8 @@ class DrawerContent extends React.Component {
   render() {
     return (
       <View >
-        <View style={{alignItems:"center", paddingTop: 20, borderRadius:10}}>
-           <Image source={{uri:"https://wallpaperplay.com/walls/full/3/f/b/277433.jpg"}} style={{height:150, width: 200, alignItems:"center"}}/>
+        <View style={{alignItems:"center", borderRadius:10}}>
+           <Image source={{uri:"https://wallpaperplay.com/walls/full/3/f/b/277433.jpg"}} style={{height:200, alignSelf:"stretch"}}/>
         </View>
 
         <View style={{paddingTop:10, paddingLeft:10, flexDirection: "row"}}>
