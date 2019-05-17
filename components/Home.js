@@ -8,7 +8,7 @@ export default class Home extends React.Component {
   render() {
     return (
       <View style={{flex:1}} >
-          <View style={{height:70, backgroundColor:"#f58d54", justifyContent: "center"}}>
+          <View style={{height:80, backgroundColor:"#f58d54", justifyContent: "center"}}>
            <Icon name="menu" style={{fontSize: 30, paddingLeft: 10 }}  onPress={()=> this.props.navigation.toggleDrawer()}/>
         </View>
         <View style={styles.container}>
