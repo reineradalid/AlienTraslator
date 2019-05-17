@@ -27,7 +27,7 @@ class DrawerContent extends React.Component {
         </View>
 
         <View style={{paddingTop:10, paddingLeft:10, flexDirection: "row"}}>
-          <TouchableOpacity style={{flexDirection:"row"}}>
+          <TouchableOpacity style={{flexDirection:"row"}} onPress = {() => {this.props.navigation.navigate('Settings')}}>
                 <Icon name="home" style={{fontSize:25,}}/>
                 <Text style={{fontSize:25,paddingLeft:10 }}>Home</Text>
             </TouchableOpacity>
