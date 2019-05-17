@@ -1,12 +1,13 @@
 
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
-import Icon from "react-native-vector-icons/MaterialIcons";
 import FaIcon from "react-native-vector-icons/FontAwesome5";
 import Home from './components/Home';
 import Settings from './components/Settings';
 import About from './components/About';
 import Picker from './components/Picker';
+import LinearGradient from 'react-native-linear-gradient';
+
 
 import{ createDrawerNavigator, createAppContainer,  } from 'react-navigation'
 
@@ -14,7 +15,16 @@ export default class App extends React.Component {
   render() {
     return (
       <View style={{flex:1}} >
+          
+<LinearGradient 
+           start={{x: 0.0, y: 0.0}} 
+           end={{x: 1, y: 1}}
+           locations={[0.0,0.5,0.9]}
+          colors={[ '#cc66ff', '#512866','#281433',]} 
+          style={styles.linearGradient}>
+
         <MyApp/>
+        </LinearGradient>
       </View>
     );
   }
@@ -74,3 +84,27 @@ const DrawerNavigator = createDrawerNavigator({
 
 
 const MyApp= createAppContainer(DrawerNavigator);
+
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  
+  },
+  welcome: {
+    fontSize: 20,
+    textAlign: 'center',
+    margin: 10,
+  },
+  instructions: {
+    textAlign: 'center',
+    color: '#333333',
+    marginBottom: 5,
+  },
+  
+  linearGradient: {
+    flex:1
+   },
+});

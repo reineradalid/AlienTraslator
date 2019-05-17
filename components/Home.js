@@ -9,7 +9,9 @@ export default class Home extends React.Component {
   render() {
     return (
       <View style={{flex:1}} >
-          <View style={{height:80, backgroundColor:"#ffffff", justifyContent: "center",zIndex:2, borderBottomWidth:0.5, borderStyle:"dashed"}}>
+
+          <View style={{height:80, backgroundColor:"#c6e2ff", justifyContent: "center"}}>
+
             <View>
             <TouchableOpacity  onPress={()=> this.props.navigation.toggleDrawer()}>
             <Icon name="menu" style={{fontSize: 30, paddingLeft: 10 }} />
