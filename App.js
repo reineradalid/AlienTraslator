@@ -30,24 +30,24 @@ class DrawerContent extends React.Component {
            <Image source={{uri:"https://wallpaperplay.com/walls/full/3/f/b/277433.jpg"}} style={{height:200, alignSelf:"stretch"}}/>
         </View>
 
-        <View style={{paddingTop:10, paddingLeft:10, flexDirection: "row"}}>
+        <View style={{paddingTop:15, paddingLeft:10, flexDirection: "row"}}>
           <TouchableOpacity style={{flexDirection:"row"}} onPress = {() => {this.props.navigation.navigate('Home')}}>
-            <FaIcon name="home" style={{fontSize:25,}}/>
+            <FaIcon name="home" color="#c6e2ff" style={{fontSize:25,}}/>
               <Text style={{fontSize:25,paddingLeft:10 }}>Home</Text>
           </TouchableOpacity>
         </View>
 
-        <View style={{paddingTop:10, paddingLeft:10, flexDirection: "row"}}>
+        <View style={{paddingTop:15, paddingLeft:10, flexDirection: "row"}}>
           <TouchableOpacity style={{flexDirection:"row"}} onPress = {() => {this.props.navigation.navigate('Settings')}}>
-            <FaIcon name="cog" style={{fontSize:25,}}/>
-              <Text style={{fontSize:25,paddingLeft:10 }}>Settings</Text>
+            <FaIcon name="cog" color="#c6e2ff" style={{fontSize:25}}/>
+              <Text style={{fontSize:25,paddingLeft:13 }}>Settings</Text>
           </TouchableOpacity>
         </View>
 
-        <View style={{paddingTop:10, paddingLeft:10, flexDirection: "row"}}>
+        <View style={{paddingTop:15, paddingLeft:18, flexDirection: "row"}}>
           <TouchableOpacity style={{flexDirection:"row"}} onPress = {() => {this.props.navigation.navigate('About')}}>
-            <FaIcon name="info" style={{fontSize:25,}}/>
-              <Text style={{fontSize:25,paddingLeft:10 }}>About</Text>
+            <FaIcon name="info" color="#c6e2ff" style={{fontSize:25,}}/>
+              <Text style={{fontSize:25,paddingLeft:22 }}>About</Text>
           </TouchableOpacity>
         </View>
       </View>

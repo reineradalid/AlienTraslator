@@ -8,7 +8,7 @@ export default class About extends React.Component {
   render() {
     return (
      <View style={{flex:1}} >
-        <View style={{height:70, backgroundColor:"#00ffff", justifyContent: "center"}}>
+        <View style={{height:70, backgroundColor:"#ffffff", justifyContent: "center",zIndex:2, borderBottomWidth:0.5, borderStyle:"dashed"}}>
           <Icon name="menu" style={{fontSize: 30, paddingLeft: 10 }}  onPress={()=> this.props.navigation.toggleDrawer()}/>
         </View>
 
