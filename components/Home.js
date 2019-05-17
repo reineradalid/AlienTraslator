@@ -1,6 +1,6 @@
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View, TouchableOpacity} from 'react-native';
+import {Platform, StyleSheet, Text, View, TouchableOpacity, TextInput} from 'react-native';
 import Icon from "react-native-vector-icons/MaterialIcons";
 
 
@@ -11,18 +11,26 @@ export default class Home extends React.Component {
           <View style={{height:80, backgroundColor:"#f58d54", justifyContent: "center"}}>
            <Icon name="menu" style={{fontSize: 30, paddingLeft: 10 }}  onPress={()=> this.props.navigation.toggleDrawer()}/>
         </View>
-        <View style={styles.container}>
-          <View> 
-            <View style={{height:300, width:250}}>
-                <TouchableOpacity><Text>Try</Text>
-                  </TouchableOpacity>
-                  
-            </View>
-
-            </View>
-            <Text>Home</Text>
+        <View style={styles.body} >
+        <View  style={styles.inputText}>
+            <TextInput placeholder="input Text"/>
+        </View>
+        <View  style={styles.buttonStyle}>
+       
+       <TouchableOpacity placeholder="try" style={{justifyContent:"center", alignItems:"center"}}>
+       <Text> Click Me
+          </Text> 
+       </TouchableOpacity>
+      
+           </View>
+        
+         
+        <View  style={styles.resultStyle}>
+            <Text>Output</Text>
         </View>
       </View>
+
+      </View> 
     );
   }
 }
@@ -44,4 +52,45 @@ const styles = StyleSheet.create({
     color: '#333333',
     marginBottom: 5,
   },
-});
+  body:{
+      height: 630, 
+      backgroundColor: '#c6e2ff', 
+      marginLeft:20,
+      marginRight:20,
+      marginTop:20,
+      borderRadius: 8,
+ 
+  },
+  inputText:{
+      height: 200, 
+      backgroundColor: '#fff', 
+      marginLeft:10,
+      marginRight:10,
+      marginTop:20,
+      marginBottom:10,
+      borderRadius: 8,
+      flex:1
+  },
+  resultStyle:{
+      height: 300, 
+      backgroundColor: '#fff', 
+      marginLeft:10,
+      marginRight:10,
+      marginTop:10,
+      marginBottom:20,
+      borderRadius: 8,
+      flex:1
+
+  },
+  buttonStyle:{
+      height: 50, 
+      backgroundColor: '#009fff', 
+      marginBottom:10,
+      borderRadius: 8,
+      width: 100,
+      justifyContent:"center",
+      alignItems:"center",
+      marginLeft:140
+
+  }
+ });
