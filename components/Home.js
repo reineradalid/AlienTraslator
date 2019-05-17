@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
   body:{
-      height: 630, 
+      
       backgroundColor: '#c6e2ff', 
       marginLeft:20,
       marginRight:20,
@@ -72,24 +72,24 @@ const styles = StyleSheet.create({
  
   },
   inputText:{
-      height: 200, 
+      height: "25%", 
       backgroundColor: '#fff', 
       marginLeft:10,
       marginRight:10,
       marginTop:20,
       marginBottom:10,
       borderRadius: 8,
-      flex:1
+    
   },
   resultStyle:{
-      height: 300, 
+      height: "40%", 
       backgroundColor: '#fff', 
       marginLeft:10,
       marginRight:10,
       marginTop:10,
-      marginBottom:20,
+     
       borderRadius: 8,
-      flex:1
+     
 
   },
   buttonStyle:{
@@ -100,7 +100,7 @@ const styles = StyleSheet.create({
       width: 100,
       justifyContent:"center",
       alignItems:"center",
-      marginLeft:140
+      marginLeft:"37%"
 
   }
  });
