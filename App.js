@@ -2,6 +2,7 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
 import Icon from "react-native-vector-icons/MaterialIcons";
+import FaIcon from "react-native-vector-icons/FontAwesome5";
 import Home from './components/Home';
 import Settings from './components/Settings';
 import About from './components/About';
@@ -27,31 +28,23 @@ class DrawerContent extends React.Component {
         </View>
 
         <View style={{paddingTop:10, paddingLeft:10, flexDirection: "row"}}>
-          <TouchableOpacity style={{flexDirection:"row"}}>
-                <Icon name="home" style={{fontSize:25,}}/>
+          <TouchableOpacity style={{flexDirection:"row"}} onPress = {() => {this.props.navigation.navigate('Home')}}>
+                <FaIcon name="home" style={{fontSize:25,}}/>
                 <Text style={{fontSize:25,paddingLeft:10 }}>Home</Text>
             </TouchableOpacity>
         </View>
 
         <View style={{paddingTop:10, paddingLeft:10, flexDirection: "row"}}>
-          <TouchableOpacity style={{flexDirection:"row"}}>
-                <Icon name="setting" style={{fontSize:25,}}/>
+          <TouchableOpacity style={{flexDirection:"row"}} onPress = {() => {this.props.navigation.navigate('Settings')}}>
+                <FaIcon name="cog" style={{fontSize:25,}}/>
                 <Text style={{fontSize:25,paddingLeft:10 }}>Settings</Text>
             </TouchableOpacity>
         </View>
 
         <View style={{paddingTop:10, paddingLeft:10, flexDirection: "row"}}>
-          <TouchableOpacity style={{flexDirection:"row"}}>
-                <Icon name="about" style={{fontSize:25,}}/>
+          <TouchableOpacity style={{flexDirection:"row"}} onPress = {() => {this.props.navigation.navigate('About')}}>
+                <FaIcon name="info" style={{fontSize:25,}}/>
                 <Text style={{fontSize:25,paddingLeft:10 }}>About</Text>
-            </TouchableOpacity>
-        </View>
-
-        <View style={{paddingTop:10, paddingLeft:10, flexDirection: "row"}}>
-          <TouchableOpacity style={{flexDirection:"row"}}>
-                <Icon name="about" style={{fontSize:25,}}/>
-
-                <Text style={{fontSize:25,paddingLeft:10 }}>Test Backend</Text>
             </TouchableOpacity>
         </View>
       </View>
