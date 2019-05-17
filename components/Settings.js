@@ -7,13 +7,14 @@ import Icon from "react-native-vector-icons/MaterialIcons";
 export default class Settings extends React.Component {
   render() {
     return (
-        <View style={{flex:1}} >
-        <View style={{height:70, backgroundColor:"#f58d54", justifyContent: "center"}}>
-     <Icon name="menu" style={{fontSize: 30, paddingLeft: 10 }} onPress={()=> this.props.navigation.toggleDrawer()}/>
-      </View>
-      <View style={styles.container}>
+      <View style={{flex:1}} >
+        <View style={{height:70, backgroundColor:"#00ffff", justifyContent: "center"}}>
+          <Icon name="menu" style={{fontSize: 30, paddingLeft: 10 }} onPress={()=> this.props.navigation.toggleDrawer()}/>
+        </View>
+
+        <View style={styles.container}>
           <Text>Settings</Text>
-          </View>
+        </View>
     </View>
     );
   }

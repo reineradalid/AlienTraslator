@@ -6,6 +6,7 @@ import FaIcon from "react-native-vector-icons/FontAwesome5";
 import Home from './components/Home';
 import Settings from './components/Settings';
 import About from './components/About';
+import Picker from './components/Picker';
 
 import{ createDrawerNavigator, createAppContainer,  } from 'react-navigation'
 
@@ -19,6 +20,8 @@ export default class App extends React.Component {
   }
 }
 
+
+
 class DrawerContent extends React.Component {
   render() {
     return (
@@ -29,29 +32,32 @@ class DrawerContent extends React.Component {
 
         <View style={{paddingTop:10, paddingLeft:10, flexDirection: "row"}}>
           <TouchableOpacity style={{flexDirection:"row"}} onPress = {() => {this.props.navigation.navigate('Home')}}>
-                <FaIcon name="home" style={{fontSize:25,}}/>
-                <Text style={{fontSize:25,paddingLeft:10 }}>Home</Text>
-            </TouchableOpacity>
+            <FaIcon name="home" style={{fontSize:25,}}/>
+              <Text style={{fontSize:25,paddingLeft:10 }}>Home</Text>
+          </TouchableOpacity>
         </View>
 
         <View style={{paddingTop:10, paddingLeft:10, flexDirection: "row"}}>
           <TouchableOpacity style={{flexDirection:"row"}} onPress = {() => {this.props.navigation.navigate('Settings')}}>
-                <FaIcon name="cog" style={{fontSize:25,}}/>
-                <Text style={{fontSize:25,paddingLeft:10 }}>Settings</Text>
-            </TouchableOpacity>
+            <FaIcon name="cog" style={{fontSize:25,}}/>
+              <Text style={{fontSize:25,paddingLeft:10 }}>Settings</Text>
+          </TouchableOpacity>
         </View>
 
         <View style={{paddingTop:10, paddingLeft:10, flexDirection: "row"}}>
           <TouchableOpacity style={{flexDirection:"row"}} onPress = {() => {this.props.navigation.navigate('About')}}>
-                <FaIcon name="info" style={{fontSize:25,}}/>
-                <Text style={{fontSize:25,paddingLeft:10 }}>About</Text>
-            </TouchableOpacity>
+            <FaIcon name="info" style={{fontSize:25,}}/>
+              <Text style={{fontSize:25,paddingLeft:10 }}>About</Text>
+          </TouchableOpacity>
         </View>
       </View>
     );
   }
 }
 const DrawerNavigator = createDrawerNavigator({
+  Picker:{
+    screen:Picker
+  },
   Home:{
     screen: Home
   },

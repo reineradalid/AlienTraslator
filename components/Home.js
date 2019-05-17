@@ -2,33 +2,43 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View, TouchableOpacity, TextInput} from 'react-native';
 import Icon from "react-native-vector-icons/MaterialIcons";
+import FaIcon from "react-native-vector-icons/FontAwesome5";
 
 
 export default class Home extends React.Component {
   render() {
     return (
       <View style={{flex:1}} >
-          <View style={{height:80, backgroundColor:"#f58d54", justifyContent: "center"}}>
-           <Icon name="menu" style={{fontSize: 30, paddingLeft: 10 }}  onPress={()=> this.props.navigation.toggleDrawer()}/>
+          <View style={{height:80, backgroundColor:"#00ffff", justifyContent: "center"}}>
+            <View>
+            <TouchableOpacity  onPress={()=> this.props.navigation.toggleDrawer()}>
+            <Icon name="menu" style={{fontSize: 30, paddingLeft: 10 }} />
+              </TouchableOpacity>
+            </View>
         </View>
+
         <View style={styles.body} >
-        <View  style={styles.inputText}>
-            <TextInput placeholder="input Text"/>
-        </View>
-        <View  style={styles.buttonStyle}>
-       
-       <TouchableOpacity placeholder="try" style={{justifyContent:"center", alignItems:"center"}}>
-       <Text> Click Me
-          </Text> 
-       </TouchableOpacity>
-      
-           </View>
-        
+          <View>
+           <TouchableOpacity>
+             <FaIcon name="exchange-alt" style={{fontSize:25, paddingTop:20, paddingLeft:330}} onPress={()=>{alert("yey")}}/>
+           </TouchableOpacity>
+          </View>
          
-        <View  style={styles.resultStyle}>
+          <View  style={styles.inputText}>
+            <TextInput placeholder="input Text"/>
+          </View>
+
+         <View  style={styles.buttonStyle}>  
+           <TouchableOpacity placeholder="try" style={{justifyContent:"center", alignItems:"center"}}>
+             <Text> Click Me</Text> 
+           </TouchableOpacity>
+         </View>
+        
+         <View  style={styles.resultStyle}>
             <Text>Output</Text>
+          </View>
+          
         </View>
-      </View>
 
       </View> 
     );
