@@ -19,14 +19,14 @@ export default class Home extends React.Component {
 switchApi(){
   if(this.state.value===0){
     this.setState({value:1})
-    this.setState({result:"Tagalog-English"});
-    alert("Tagalog-English")
+     this.setState({result:"Tagalog-English"});
+      alert("Tagalog-English")
   }else{
-    this.setState({value:0})
-    this.setState({result:"English-Tagalog"});
-    alert("English-Tagalog")
-  }
-}
+      this.setState({value:0})
+       this.setState({result:"English-Tagalog"});
+        alert("English-Tagalog")
+      }
+    }
 
   render() {
 
@@ -34,34 +34,34 @@ switchApi(){
       <View style={{flex:1}} >
           <View style={{height:80, backgroundColor:"#c6e2ff", justifyContent: "center"}}>
             <View>
-            <TouchableOpacity  onPress={()=> this.props.navigation.toggleDrawer()}>
-            <Icon name="menu" style={{fontSize: 30, paddingLeft: 10 }} />
+             <TouchableOpacity  onPress={()=> this.props.navigation.toggleDrawer()}>
+                <Icon name="menu" style={{fontSize: 30, paddingLeft: 10 }} />
+             </TouchableOpacity>
+           </View>
+          </View>
+
+          <View style={styles.body} >
+            <View>
+              <TouchableOpacity>
+                <FaIcon name="exchange-alt" style={{fontSize:25, paddingTop:20, paddingLeft:330}} onPress={()=>{this.switchApi()}}/>
               </TouchableOpacity>
             </View>
-        </View>
-
-        <View style={styles.body} >
-          <View>
-           <TouchableOpacity>
-             <FaIcon name="exchange-alt" style={{fontSize:25, paddingTop:20, paddingLeft:330}} onPress={()=>{this.switchApi()}}/>
-           </TouchableOpacity>
-          </View>
-         
-          <View  style={styles.inputText}>
-            <TextInput placeholder="input Text"/>
-          </View>
-
-         <View  style={styles.buttonStyle}>  
-           <TouchableOpacity placeholder="try" style={{justifyContent:"center", alignItems:"center"}}  >
-             <Text> Click Me</Text> 
-           </TouchableOpacity>
-         </View>
-        
-         <View  style={styles.resultStyle}>
-            <Text>{this.state.result}</Text>
-          </View>
           
-        </View>
+            <View  style={styles.inputText}>
+              <TextInput placeholder="input Text"/>
+            </View>
+
+            <View  style={styles.buttonStyle}>  
+              <TouchableOpacity placeholder="try" style={{justifyContent:"center", alignItems:"center"}}  >
+                <Text> Click Me</Text> 
+              </TouchableOpacity>
+            </View>
+          
+            <View  style={styles.resultStyle}>
+              <Text>{this.state.result}</Text>
+            </View>
+            
+          </View>
 
       </View> 
     );

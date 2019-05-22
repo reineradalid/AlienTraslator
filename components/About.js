@@ -18,13 +18,13 @@ export default class About extends React.Component {
           style={{flex:1}}>
 
  
-        <View style={{height:70, backgroundColor:"#c6e2ff", justifyContent: "center"}}>
-          <Icon name="menu" style={{fontSize: 30, paddingLeft: 10 }}  onPress={()=> this.props.navigation.toggleDrawer()}/>
-        </View>
+          <View style={{height:70, backgroundColor:"#c6e2ff", justifyContent: "center"}}>
+            <Icon name="menu" style={{fontSize: 30, paddingLeft: 10 }}  onPress={()=> this.props.navigation.toggleDrawer()}/>
+          </View>
 
-        <View style={styles.container}>
-          <Text>About</Text>
-        </View>
+          <View style={styles.container}>
+            <Text>About</Text>
+          </View>
         </LinearGradient>
      </View>
     );

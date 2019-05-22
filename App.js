@@ -16,14 +16,13 @@ export default class App extends React.Component {
     return (
       <View style={{flex:1}} >
           
-<LinearGradient 
+        <LinearGradient 
            start={{x: 0.0, y: 0.0}} 
            end={{x: 1, y: 1}}
            locations={[0.0,0.5,0.9]}
           colors={[ '#cc66ff', '#512866','#281433',]} 
           style={styles.linearGradient}>
-
-        <MyApp/>
+            <MyApp/>
         </LinearGradient>
       </View>
     );

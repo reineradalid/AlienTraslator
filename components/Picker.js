@@ -13,27 +13,27 @@ export default class About extends React.Component {
     return (
      <View style={{flex:1}} >
        
-        <LinearGradient 
+      <LinearGradient 
            start={{x: 0.0, y: 0.0}} 
            end={{x: 1, y: 1}}
            locations={[0.0,0.5,0.9]}
-          colors={[ '#cc66ff', '#512866','#281433',]} 
-          style={styles.linearGradient}>
+           colors={[ '#cc66ff', '#512866','#281433',]} 
+           style={styles.linearGradient}>
 
  
         <View style={styles.container}>
             <View style={{ backgroundColor:"#c6e2ff", height:180, width:300, borderRadius:10, justifyContent:"center", alignItems:"center" }}>
-            <View style={{paddingBottom:8, borderStyle:"dashed", borderBottomWidth:2}}>
-                <TouchableOpacity onPress={()=>{this.props.navigation.navigate("Home")}}>
-                    <Text style={{fontSize:25}}>English</Text>
-                </TouchableOpacity>
-            </View>
+              <View style={{paddingBottom:8, borderStyle:"dashed", borderBottomWidth:2}}>
+                  <TouchableOpacity onPress={()=>{this.props.navigation.navigate("Home")}}>
+                      <Text style={{fontSize:25}}>English</Text>
+                  </TouchableOpacity>
+              </View>
 
-            <View>
-                <TouchableOpacity onPress={()=>{this.props.navigation.navigate("Home")}}>
-                    <Text style={{fontSize:25}}>Tagalog</Text>
-                </TouchableOpacity>         
-            </View>
+              <View>
+                  <TouchableOpacity onPress={()=>{this.props.navigation.navigate("Home")}}>
+                      <Text style={{fontSize:25}}>Tagalog</Text>
+                  </TouchableOpacity>         
+              </View>
             </View>
         </View>
         
