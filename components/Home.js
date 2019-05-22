@@ -5,8 +5,31 @@ import Icon from "react-native-vector-icons/MaterialIcons";
 import FaIcon from "react-native-vector-icons/FontAwesome5";
 
 
+
 export default class Home extends React.Component {
+  constructor(props){
+    super(props)
+    this.state={
+        value:0,
+    result:"English-Tagalog"
+      }
+    
+  }
+
+switchApi(){
+  if(this.state.value===0){
+    this.setState({value:1})
+    this.setState({result:"Tagalog-English"});
+    alert("Tagalog-English")
+  }else{
+    this.setState({value:0})
+    this.setState({result:"English-Tagalog"});
+    alert("English-Tagalog")
+  }
+}
+
   render() {
+
     return (
       <View style={{flex:1}} >
           <View style={{height:80, backgroundColor:"#c6e2ff", justifyContent: "center"}}>
@@ -20,7 +43,7 @@ export default class Home extends React.Component {
         <View style={styles.body} >
           <View>
            <TouchableOpacity>
-             <FaIcon name="exchange-alt" style={{fontSize:25, paddingTop:20, paddingLeft:330}} onPress={()=>{alert("yey")}}/>
+             <FaIcon name="exchange-alt" style={{fontSize:25, paddingTop:20, paddingLeft:330}} onPress={()=>{this.switchApi()}}/>
            </TouchableOpacity>
           </View>
          
@@ -29,13 +52,13 @@ export default class Home extends React.Component {
           </View>
 
          <View  style={styles.buttonStyle}>  
-           <TouchableOpacity placeholder="try" style={{justifyContent:"center", alignItems:"center"}}>
+           <TouchableOpacity placeholder="try" style={{justifyContent:"center", alignItems:"center"}}  >
              <Text> Click Me</Text> 
            </TouchableOpacity>
          </View>
         
          <View  style={styles.resultStyle}>
-            <Text>Output</Text>
+            <Text>{this.state.result}</Text>
           </View>
           
         </View>

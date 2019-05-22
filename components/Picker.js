@@ -7,6 +7,8 @@ import LinearGradient from 'react-native-linear-gradient';
 
 
 export default class About extends React.Component {
+    
+  
   render() {
     return (
      <View style={{flex:1}} >
@@ -28,7 +30,7 @@ export default class About extends React.Component {
             </View>
 
             <View>
-                <TouchableOpacity  onPress={()=>{this.props.navigation.navigate("Home")}}>
+                <TouchableOpacity onPress={()=>{this.props.navigation.navigate("Home")}}>
                     <Text style={{fontSize:25}}>Tagalog</Text>
                 </TouchableOpacity>         
             </View>
