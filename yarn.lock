@@ -2111,6 +2111,11 @@ expect@^24.8.0:
     jest-message-util "^24.8.0"
     jest-regex-util "^24.3.0"
 
+expo-speech@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/expo-speech/-/expo-speech-4.0.0.tgz#e5e67de2a909a4dbcdb3cb584bdeb4a015d43e03"
+  integrity sha512-rIL+9qSUvUdrIN7NMAgmOHx1tjGsGqmSgwdsCoQpabchVmwjZ2UikApiGoidPpdIhZz3tNsLJOU7zG0zQMxEIg==
+
 extend-shallow@^1.1.2:
   version "1.1.4"
   resolved "https://registry.yarnpkg.com/extend-shallow/-/extend-shallow-1.1.4.tgz#19d6bf94dfc09d76ba711f39b872d21ff4dd9071"
@@ -4938,6 +4943,11 @@ react-native-gesture-handler@^1.2.1:
     invariant "^2.2.2"
     prop-types "^15.5.10"
 
+react-native-linear-gradient@^2.5.4:
+  version "2.5.4"
+  resolved "https://registry.yarnpkg.com/react-native-linear-gradient/-/react-native-linear-gradient-2.5.4.tgz#dce133526f5a5510a639af94544f1ed0c984bd1e"
+  integrity sha512-FF1NhlerA4uBiS0gFIHa4FBp8/aftv4vPj14Y47lGNkYjSI94tnI6oYO3EfUxXjEyCUPiOVNKZOB9kScyjc5Ew==
+
 react-native-safe-area-view@^0.14.1:
   version "0.14.3"
   resolved "https://registry.yarnpkg.com/react-native-safe-area-view/-/react-native-safe-area-view-0.14.3.tgz#3cc34d2fcc8886bc8a8bd1ab226d4345d02c23b0"
@@ -4950,12 +4960,22 @@ react-native-safe-area-view@^0.14.1:
   resolved "https://registry.yarnpkg.com/react-native-screens/-/react-native-screens-1.0.0-alpha.22.tgz#7a120377b52aa9bbb94d0b8541a014026be9289b"
   integrity sha512-kSyAt0AeVU6N7ZonfV6dP6iZF8B7Bce+tk3eujXhzBGsLg0VSLnU7uE9VqJF0xdQrHR91ZjGgVMieo/8df9KTA==
 
+react-native-speech@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/react-native-speech/-/react-native-speech-0.1.2.tgz#c16127c6a61351eeddb7878db80709f7ce6a7057"
+  integrity sha1-wWEnxqYTUe7dt4eNuAcJ985qcFc=
+
 react-native-tab-view@^1.2.0, react-native-tab-view@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/react-native-tab-view/-/react-native-tab-view-1.4.0.tgz#c70a1f6a86a12bdb6e8b30c390afc751dfe41275"
   integrity sha512-YnTO4tavO0TXN1nHVQel+4IB0SYoke+moAbdsai9I5DlQ2PTtW4077Vm2N9cdN7zCb5JoWKHulyB9jtTdKR3fQ==
   dependencies:
     prop-types "^15.6.1"
+
+react-native-tts@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/react-native-tts/-/react-native-tts-3.0.0.tgz#987d6bc5430f7d0bdc0c7c278eb72744fe3ec516"
+  integrity sha512-ccaKP393e5+DHEJ/GEA7uX2HEuvnW6gXB0jwT+SUHbmSV+8FY3HFMV3JUxL7YQSigSXXLAbbIFYgmPhjNcVYBw==
 
 react-native-vector-icons@^6.4.2:
   version "6.4.2"

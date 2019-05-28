@@ -3,37 +3,59 @@ import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View, TouchableOpacity, TextInput} from 'react-native';
 import Icon from "react-native-vector-icons/MaterialIcons";
 import FaIcon from "react-native-vector-icons/FontAwesome5";
-
-
+import { Clipboard} from 'react-native'
+import Picker from './Picker';
+import Tts from 'react-native-tts';
 
 export default class Home extends React.Component {
   constructor(props){
     super(props)
     this.state={
         value:0,
-    result:"English-Tagalog"
-      }
+        result:"English-tagalog",
+        clipboardContent: null,
+        
     
+      } 
   }
 
-switchApi(){
-  if(this.state.value===0){
-    this.setState({value:1})
-     this.setState({result:"Tagalog-English"});
-      alert("Tagalog-English")
-  }else{
-      this.setState({value:0})
-       this.setState({result:"English-Tagalog"});
-        alert("English-Tagalog")
-      }
-    }
+
+  
+  onSpeak = async ()=>{
+    Tts.speak(this.state.result,{
+       androidParams: { 
+         KEY_PARAM_PAN: 0, 
+         KEY_PARAM_VOLUME:1, 
+         KEY_PARAM_STREAM: 'STREAM_MUSIC' } });
+  }
+  
+  switchApi()
+  {
+    this.state.value===0 ?
+     this.setState({value:1,result:"Tagalog-English" }) : this.setState({value:0,result:"English-Tagalog"})
+  }
+
+  Alert(){
+      this.state.value===0 ? alert("English"): alert("Tagalog")
+  }
+  targetTxt(){
+      this.state.value===0 ? <Text style={{fontStyle:"italic",fontSize:15, fontWeight:"bold",}}> "English"</Text>:   <Text style={{fontStyle:"italic",fontSize:15, fontWeight:"bold",}}>"Tagalog"</Text>
+  }
+  resultWriteToClipboard = async () => {
+      //To copy the text to clipboard
+      await Clipboard.setString(this.state.result);
+      alert('Copied to Clipboard!');
+}
+
+
+    
 
   render() {
-
+    
     return (
-      <View style={{flex:1}} >
-          <View style={{height:80, backgroundColor:"#c6e2ff", justifyContent: "center"}}>
-            <View>
+      <View style={{flex:1}}>
+          <View style={{height:60, backgroundColor:"#0063B2FF", justifyContent: "center"}}>
+            <View style={{position:"absolute"}}>
              <TouchableOpacity  onPress={()=> this.props.navigation.toggleDrawer()}>
                 <Icon name="menu" style={{fontSize: 30, paddingLeft: 10 }} />
              </TouchableOpacity>
@@ -41,39 +63,69 @@ switchApi(){
           </View>
 
           <View style={styles.body} >
-            <View>
-              <TouchableOpacity>
-                <FaIcon name="exchange-alt" style={{fontSize:25, paddingTop:20, paddingLeft:330}} onPress={()=>{this.switchApi()}}/>
+            <View style={{flexDirection:"row", backgroundColor:"#9CC3D5FF", marginBottom:10, height:45}}>
+              <View style={{flex:3, justifyContent: "center",alignItems:'center'}}>
+                {this.state.value===0 ? 
+                  <Text style={{fontStyle:"italic",fontSize:15, fontWeight:"bold",}}> English</Text>
+                  :   
+                  <Text style={{fontStyle:"italic",fontSize:15, fontWeight:"bold",}}>Tagalog</Text>
+                }
+              </View>
+             
+              <TouchableOpacity style={{
+                    top:-10,
+                    width: 70,
+                    height:70,
+                    alignItems:'center',
+                    justifyContent:'center',
+                    elevation:8,
+                    borderRadius: 50,
+                    backgroundColor:'#fff', }}
+                    onPress={()=>{this.switchApi()}} >
+                <FaIcon name="exchange-alt" style={{fontSize:25,}}/>
               </TouchableOpacity>
+              
+              <View style={{flex:3, justifyContent:"center", alignItems:'center'}}>
+                {this.state.value===0 ? 
+                  <Text style={{fontStyle:"italic",fontSize:15, fontWeight:"bold",}}>Tagalog</Text>
+                  :   
+                  <Text style={{fontStyle:"italic",fontSize:15, fontWeight:"bold",}}>English</Text>
+                }
+              </View>
             </View>
           
             <View  style={styles.inputText}>
-              <TextInput placeholder="input Text"/>
-            </View>
-
-            <View  style={styles.buttonStyle}>  
-              <TouchableOpacity placeholder="try" style={{justifyContent:"center", alignItems:"center"}}  >
-                <Text> Click Me</Text> 
-              </TouchableOpacity>
-            </View>
-          
-            <View  style={styles.resultStyle}>
-              <Text>{this.state.result}</Text>
+              <TextInput placeholder="Input Text" style={{ height: "30%", 
+                backgroundColor: '#fff', 
+                marginLeft:10,
+                marginRight:10,
+                fontSize:18,
+               
+                }}/>  
             </View>
             
-          </View>
+              <TouchableOpacity placeholder="try" style={styles.buttonStyle} onPress={()=>{this.Alert()}}>
+                <Text style={{fontStyle:"italic",fontSize:15, fontWeight:"bold",}}>Traslate</Text> 
+              </TouchableOpacity>
 
+            <View  style={styles.resultStyle}>
+              <Text style={{marginLeft:10, marginTop:20, fontSize:18}} onChangeText={(result) => this.setState({result})}>{this.state.result}</Text>
+              <FaIcon  name="clipboard" style={{position:'absolute', right:15, bottom:5, fontSize:25}} onPress={this.resultWriteToClipboard}/>
+              <FaIcon  name="volume-up" style={{position:'absolute', right:45, bottom:5, fontSize:25}} onPress={this.onSpeak}/> 
+            </View>
+          </View>
       </View> 
     );
   }
 }
+
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    backgroundColor: '#f7c744',
   },
   welcome: {
     fontSize: 20,
@@ -87,21 +139,24 @@ const styles = StyleSheet.create({
   },
   body:{
       
-      backgroundColor: '#c6e2ff', 
-      marginLeft:20,
-      marginRight:20,
-      marginTop:20,
-      borderRadius: 8,
- 
+      backgroundColor: '#0063B2FF', 
+      marginLeft:10,
+      marginRight:10,
+      marginTop:10,
+      borderRadius:2,
+      height:"90%",
+      
+   
   },
   inputText:{
-      height: "25%", 
+      height: "30%", 
       backgroundColor: '#fff', 
       marginLeft:10,
       marginRight:10,
-      marginTop:20,
-      marginBottom:10,
-      borderRadius: 8,
+    
+      marginTop:10
+      
+     
     
   },
   resultStyle:{
@@ -111,19 +166,17 @@ const styles = StyleSheet.create({
       marginRight:10,
       marginTop:10,
      
-      borderRadius: 8,
+     
      
 
   },
   buttonStyle:{
-      height: 50, 
-      backgroundColor: '#009fff', 
+      height:40, 
+      backgroundColor: "#9CC3D5FF", 
       marginBottom:10,
-      borderRadius: 8,
-      width: 100,
       justifyContent:"center",
       alignItems:"center",
-      marginLeft:"37%"
-
+      marginLeft:10,
+      marginRight:10,
   }
  });

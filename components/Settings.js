@@ -1,7 +1,10 @@
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
+import {Platform, StyleSheet, Text, View, TouchableOpacity, TextInput} from 'react-native';
 import Icon from "react-native-vector-icons/MaterialIcons";
+import FaIcon from "react-native-vector-icons/FontAwesome5";
+import Picker from './Picker';
+
 import LinearGradient from 'react-native-linear-gradient';
 
 
@@ -10,22 +13,19 @@ export default class Settings extends React.Component {
     return (
       <View style={{flex:1}} >
          
-         <LinearGradient 
-           start={{x: 0.0, y: 0.0}} 
-           end={{x: 1, y: 1}}
-           locations={[0.0,0.5,0.9]}
-          colors={[ '#cc66ff', '#512866','#281433',]} 
-          style={{flex:1}}>
-
-  
-          <View style={{height:70, backgroundColor:"#c6e2ff", justifyContent: "center"}}>
-            <Icon name="menu" style={{fontSize: 30, paddingLeft: 10 }} onPress={()=> this.props.navigation.toggleDrawer()}/>
+         
+        <View style={{height:60, backgroundColor:'#fff', backgroundColor:"#c6e2ff", justifyContent: "center"}}>
+            <View style={{position:"absolute"}}>
+             <TouchableOpacity  onPress={()=> this.props.navigation.toggleDrawer()}>
+                <Icon name="menu" style={{fontSize: 30, paddingLeft: 10 }} />
+             </TouchableOpacity>
+           </View>
           </View>
 
           <View style={styles.container}>
-            <Text>Settings</Text>
+            <Text  style={{fontSize:30, fontStyle:"italic",fontWeight:'bold', color:"#FFF"}}>Settings</Text>
           </View>
-        </LinearGradient>
+     
     </View>
     );
   }

@@ -3,41 +3,40 @@ import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View,TouchableOpacity} from 'react-native';
 import Icon from "react-native-vector-icons/MaterialIcons";
 import LinearGradient from 'react-native-linear-gradient';
+import Home from './Home';
+import { bold } from 'ansi-colors';
 
 
 
-export default class About extends React.Component {
-    
-  
+export default class Picker extends React.Component {
+  constructor(props) {
+    super(props);
+  }
   render() {
     return (
      <View style={{flex:1}} >
        
-      <LinearGradient 
-           start={{x: 0.0, y: 0.0}} 
-           end={{x: 1, y: 1}}
-           locations={[0.0,0.5,0.9]}
-           colors={[ '#cc66ff', '#512866','#281433',]} 
-           style={styles.linearGradient}>
+      
 
  
         <View style={styles.container}>
-            <View style={{ backgroundColor:"#c6e2ff", height:180, width:300, borderRadius:10, justifyContent:"center", alignItems:"center" }}>
-              <View style={{paddingBottom:8, borderStyle:"dashed", borderBottomWidth:2}}>
+            <View style={{ height:180, width:300, borderRadius:10, justifyContent:"center", alignItems:"center" }}>
+              <View style={{paddingBottom:8, borderStyle:"dashed", borderBottomWidth:2, borderBottomColor:"#fff"}}>
                   <TouchableOpacity onPress={()=>{this.props.navigation.navigate("Home")}}>
-                      <Text style={{fontSize:25}}>English</Text>
+                      <Text style={{fontSize:30, fontStyle:'italic', fontWeight:"bold", color:'#fff'}}>English</Text>
+                    
                   </TouchableOpacity>
               </View>
 
               <View>
                   <TouchableOpacity onPress={()=>{this.props.navigation.navigate("Home")}}>
-                      <Text style={{fontSize:25}}>Tagalog</Text>
+                      <Text style={{fontSize:30, fontStyle:'italic', fontWeight:"bold", color:'#fff'}}>Tagalog</Text>
                   </TouchableOpacity>         
               </View>
             </View>
         </View>
         
-      </LinearGradient>
+     
      </View>
     );
   }
